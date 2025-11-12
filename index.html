@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task Manager (Noob)</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="main.css">
+        <script type="module" defer src="js/main.js"></script>
+    </head>
+    <body>
+        <h1 class="text-center">Administrador De Tareas</h1>
+        <section class="TM" id="tablaTM">
+
+        </section>
+        <br>
+        <div class="gridOptions">
+            <button type="button" id="openAdd">Añadir Tarea</button>
+            <button type="button" id="openComplete">Marcar Como Completada</button>
+            <button type="button" id="openDelete">Borrar Tarea</button>
+            <button type="button" id="openFilter">Filtrar</button>
+            <button type="button" id="openClearAll">Borrar TODAS Las Tareas</button>
+        </div>
+        <br>
+        <div class="otherGRID">
+            <form class="disabled col2" id="formAdd">
+                <label for="title">Nombre de la tarea: </label>
+                <input type="text" id="title" name="title" placeholder="Título"><br>
+                <label for="desc">Descripción de la tarea: </label>
+                <input type="text" id="desc" name="desc" placeholder="Esto es una tarea nueva..."><br>
+                <label for="prio">Prioridad de la tarea: </label>
+                <select id="prio" name="prio">
+                    <option value="low">Baja</option>
+                    <option value="normal">Media</option>
+                    <option value="high">Alta</option>
+                </select>
+                <br>
+                <input type="submit" value="Añadir Tarea" id="addTask">
+            </form>
+
+            <form class="disabled col2" id="formCompleted">
+                <label for="id">Id de la tarea a completar: </label>
+                <input type="number" id="id" name="id">
+
+                <input type="submit" value="Completar" id="marcarComoCompletado">
+            </form>
+
+            <form class="disabled col2" id="formDelete">
+                <label for="id">Id de la tarea a borrar: </label>
+                <input type="number" id="removeID" name="removeID">
+
+                <input type="submit" value="Borrar" id="borrarTarea">
+            </form>
+
+            <form class="disabled col2 miniGrid" id="formFiltrar">
+                <label for="completado" class="col1 row1">Filtrar Por Completadas</label>
+                <select id="completado" class="col1 row2">
+                    <option value="completado">Completadas</option>
+                    <option value="nuh">No Completadas</option>
+                </select>
+
+                <input type="submit" class="col1 row3" id="filtrarCompletadas" value="Filtrar">
+
+                <label for="prioridadFiltrar" class="col2 row1">Filtrar Por Prioridad</label>
+                <select id="prioridadFiltrar" class="col2 row2">
+                    <option value="low">Baja</option>
+                    <option value="normal">Media</option>
+                    <option value="high">Alta</option>
+                </select>
+
+                <input type="submit" class="col2 row3" id="filtrarPrioridad" value="Filtrar">
+
+                <input type="submit" class="row4 col2" id="desFiltrar" value="Borrar Filtros">
+            </form>
+
+            <form class="disabled col2" id="borrarTodo">
+                <label for="Borrar">¿Seguro que quieres borrar todas las tareas?</label>
+                <br>
+                <button type="button" id="confirmarBorrar">Si</button>
+                <button type="button" id="negarBorrar">No</button>
+            </form>
+        </div>
+    </body>
+</html>
