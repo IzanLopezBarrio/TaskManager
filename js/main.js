@@ -17,6 +17,8 @@ btnAddTask.addEventListener("click", (event) => {
     event.preventDefault()
 
     addTask()
+
+    LSManager.saveToLocal()
 })
 
 const btnShowCompleted = document.getElementById("openComplete")
@@ -34,6 +36,8 @@ btnCompleted.addEventListener("click", (event) => {
 
     const id = document.getElementById("id").value
     completedTask(id)
+
+    LSManager.saveToLocal()
 })
 
 const btnShowDel = document.getElementById("openDelete")
@@ -53,6 +57,8 @@ btnDel.addEventListener("click", (event) => {
     removeTask(id)
 
     document.getElementById("formDelete").classList.add("disabled")
+
+    LSManager.saveToLocal()
 })
 
 const btnShowFiltro = document.getElementById("openFilter")
@@ -96,16 +102,10 @@ btnShowFullDel.addEventListener("click", (event) => {
 })
 const btnConfirmarBorrado = document.getElementById("confirmarBorrar")
 const btnNegarBorrado = document.getElementById("negarBorrar")
-
 btnConfirmarBorrado.addEventListener("click", (event) => {
     removeAllTask(true)
     LSManager.clearLocal()
 })
 btnNegarBorrado.addEventListener("click", (event) => {
     removeAllTask(false)
-})
-
-const btnSaveLocal = document.getElementById("localSave")
-btnSaveLocal.addEventListener("click", (event) => {
-    LSManager.saveToLocal()
 })
