@@ -1,5 +1,6 @@
 import { TaskFactory } from "../patterns/factory.js"
 import { DOMFacade } from "../ui/facade.js"
+import { LSManager } from "./localStorageManager.js"
 
 export let arrayTask = new Array()
 
@@ -78,4 +79,11 @@ export function filtrarTareas(modo, valor) {
     DOMFacade.reloadList(placeHolder)
 
     document.getElementById("formFiltrar").classList.add("disabled")
+}
+
+export function getArray() {
+    return arrayTask
+}
+export function setArray(newArray) {
+    arrayTask = newArray
 }

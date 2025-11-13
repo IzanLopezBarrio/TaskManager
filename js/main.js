@@ -1,4 +1,7 @@
 import { addTask, completedTask, filtrarTareas, removeAllTask, removeTask } from "./actions/commands.js"
+import { LSManager } from "./actions/localStorageManager.js"
+
+LSManager.loadLocal()
 
 const btnShowAdd = document.getElementById("openAdd")
 btnShowAdd.addEventListener("click", (event) => {
@@ -96,8 +99,13 @@ const btnNegarBorrado = document.getElementById("negarBorrar")
 
 btnConfirmarBorrado.addEventListener("click", (event) => {
     removeAllTask(true)
+    LSManager.clearLocal()
 })
 btnNegarBorrado.addEventListener("click", (event) => {
     removeAllTask(false)
 })
 
+const btnSaveLocal = document.getElementById("localSave")
+btnSaveLocal.addEventListener("click", (event) => {
+    LSManager.saveToLocal()
+})
