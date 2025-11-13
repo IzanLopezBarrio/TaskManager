@@ -1,3 +1,5 @@
+"use strict"
+
 export class DOMFacade {
     static addTaskToList(Task) {
         const section = document.getElementById("tablaTM")
@@ -24,5 +26,46 @@ export class DOMFacade {
         const section = document.getElementById("tablaTM")
 
         section.innerHTML = ""
+    }
+
+    static openAdd() {
+        document.getElementById("formAdd").classList.remove("disabled")
+        
+        document.getElementById("borrarTodo").classList.add("disabled")
+        document.getElementById("formCompleted").classList.add("disabled")
+        document.getElementById("formDelete").classList.add("disabled")
+        document.getElementById("formFiltrar").classList.add("disabled")
+    }
+    static openComplete() {
+        document.getElementById("formCompleted").classList.remove("disabled")
+
+        document.getElementById("borrarTodo").classList.add("disabled")
+        document.getElementById("formAdd").classList.add("disabled")
+        document.getElementById("formDelete").classList.add("disabled")
+        document.getElementById("formFiltrar").classList.add("disabled")
+    }
+    static openDelete() {
+        document.getElementById("formDelete").classList.remove("disabled")
+
+        document.getElementById("formCompleted").classList.add("disabled")
+        document.getElementById("borrarTodo").classList.add("disabled")
+        document.getElementById("formAdd").classList.add("disabled")
+        document.getElementById("formFiltrar").classList.add("disabled")
+    }
+    static openFilter() {
+        document.getElementById("formFiltrar").classList.remove("disabled")
+
+        document.getElementById("formCompleted").classList.add("disabled")
+        document.getElementById("borrarTodo").classList.add("disabled")
+        document.getElementById("formAdd").classList.add("disabled")
+        document.getElementById("formDelete").classList.add("disabled")
+    }
+    static openClearAll() {
+        document.getElementById("borrarTodo").classList.remove("disabled")
+        
+        document.getElementById("formAdd").classList.add("disabled")
+        document.getElementById("formCompleted").classList.add("disabled")
+        document.getElementById("formDelete").classList.add("disabled")
+        document.getElementById("formFiltrar").classList.add("disabled")
     }
 }

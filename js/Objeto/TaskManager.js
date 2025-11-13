@@ -1,3 +1,5 @@
+"use strict"
+
 export class Task {
     constructor(nombre, desc, priori, comple, crea) {
         this.id = Date.now()

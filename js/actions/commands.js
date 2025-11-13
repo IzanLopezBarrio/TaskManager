@@ -1,6 +1,7 @@
+"use strict"
+
 import { TaskFactory } from "../patterns/factory.js"
 import { DOMFacade } from "../ui/facade.js"
-import { LSManager } from "./localStorageManager.js"
 
 export let arrayTask = new Array()
 
@@ -79,6 +80,28 @@ export function filtrarTareas(modo, valor) {
     DOMFacade.reloadList(placeHolder)
 
     document.getElementById("formFiltrar").classList.add("disabled")
+}
+
+export function menuOpen(menu) {
+    switch (menu) {
+        case "Añadir":
+            DOMFacade.openAdd()
+            break;
+        case "Completar":
+            DOMFacade.openComplete()
+            break;
+        case "Borrar":
+            DOMFacade.openDelete()
+            break;
+        case "Filtrar":
+            DOMFacade.openFilter()
+            break;
+        case "BorrarTodo":
+            DOMFacade.openClearAll()
+            break;
+        default:
+            break;
+    }
 }
 
 export function getArray() {

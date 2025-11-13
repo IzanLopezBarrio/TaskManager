@@ -1,3 +1,5 @@
+"use strict"
+
 import { Task } from "../Objeto/TaskManager.js"
 
 export class TaskFactory {

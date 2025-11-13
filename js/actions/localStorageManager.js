@@ -1,3 +1,5 @@
+"use strict"
+
 import { getArray, setArray } from "./commands.js"
 import { DOMFacade } from "../ui/facade.js"
 

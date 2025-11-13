@@ -1,16 +1,13 @@
-import { addTask, completedTask, filtrarTareas, removeAllTask, removeTask } from "./actions/commands.js"
+"use strict"
+
+import { addTask, completedTask, filtrarTareas, menuOpen, removeAllTask, removeTask } from "./actions/commands.js"
 import { LSManager } from "./actions/localStorageManager.js"
 
 LSManager.loadLocal()
 
 const btnShowAdd = document.getElementById("openAdd")
 btnShowAdd.addEventListener("click", (event) => {
-    document.getElementById("formAdd").classList.remove("disabled")
-
-    document.getElementById("borrarTodo").classList.add("disabled")
-    document.getElementById("formCompleted").classList.add("disabled")
-    document.getElementById("formDelete").classList.add("disabled")
-    document.getElementById("formFiltrar").classList.add("disabled")
+    menuOpen("Añadir")
 })
 const btnAddTask = document.getElementById("addTask")
 btnAddTask.addEventListener("click", (event) => {
@@ -23,12 +20,7 @@ btnAddTask.addEventListener("click", (event) => {
 
 const btnShowCompleted = document.getElementById("openComplete")
 btnShowCompleted.addEventListener("click", (event) => {
-    document.getElementById("formCompleted").classList.remove("disabled")
-
-    document.getElementById("borrarTodo").classList.add("disabled")
-    document.getElementById("formAdd").classList.add("disabled")
-    document.getElementById("formDelete").classList.add("disabled")
-    document.getElementById("formFiltrar").classList.add("disabled")
+    menuOpen("Completar")
 })
 const btnCompleted = document.getElementById("marcarComoCompletado")
 btnCompleted.addEventListener("click", (event) => {
@@ -42,12 +34,7 @@ btnCompleted.addEventListener("click", (event) => {
 
 const btnShowDel = document.getElementById("openDelete")
 btnShowDel.addEventListener("click", (event) => {
-    document.getElementById("formDelete").classList.remove("disabled")
-
-    document.getElementById("formCompleted").classList.add("disabled")
-    document.getElementById("borrarTodo").classList.add("disabled")
-    document.getElementById("formAdd").classList.add("disabled")
-    document.getElementById("formFiltrar").classList.add("disabled")
+    menuOpen("Borrar")
 })
 const btnDel = document.getElementById("borrarTarea")
 btnDel.addEventListener("click", (event) => {
@@ -63,12 +50,7 @@ btnDel.addEventListener("click", (event) => {
 
 const btnShowFiltro = document.getElementById("openFilter")
 btnShowFiltro.addEventListener("click", (event) => {
-    document.getElementById("formFiltrar").classList.remove("disabled")
-
-    document.getElementById("formCompleted").classList.add("disabled")
-    document.getElementById("borrarTodo").classList.add("disabled")
-    document.getElementById("formAdd").classList.add("disabled")
-    document.getElementById("formDelete").classList.add("disabled")
+    menuOpen("Filtrar")
 })
 const btnFiltroCompletada = document.getElementById("filtrarCompletadas")
 const btnFiltroPrioridad = document.getElementById("filtrarPrioridad")
@@ -93,12 +75,7 @@ btnFiltroDesfiltrar.addEventListener("click", (event) => {
 
 const btnShowFullDel = document.getElementById("openClearAll")
 btnShowFullDel.addEventListener("click", (event) => {
-    document.getElementById("borrarTodo").classList.remove("disabled")
-
-    document.getElementById("formAdd").classList.add("disabled")
-    document.getElementById("formCompleted").classList.add("disabled")
-    document.getElementById("formDelete").classList.add("disabled")
-    document.getElementById("formFiltrar").classList.add("disabled")
+    menuOpen("BorrarTodo")
 })
 const btnConfirmarBorrado = document.getElementById("confirmarBorrar")
 const btnNegarBorrado = document.getElementById("negarBorrar")
