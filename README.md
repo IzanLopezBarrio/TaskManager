@@ -11,4 +11,26 @@ Adicionalmente, la lista se guarda en la memoria del equipo, por lo que el usuar
 
 ## Como usar:
 
-TBA
+### Añadir Tarea:
+
+Para añadir una tarea, clickamos en su repectivo botón. Al hacerlo, se mostrará un menú donde nos pedirá nombre, descripción y prioridad. Si no se asigna nombre o descripción (acción no recomendable), se le asignará un valor por defecto.
+
+### Completar Tarea:
+
+Al clickar este botón, se mostrará un menú que nos pide el ID de la tarea que queremos marcar como completa. Tan solo introduce dicha ID.
+
+### Borrar Tarea:
+
+Similar a completarla, introduce una ID y la tarea correspondiente se borrará de la lista.
+
+### Filtrar Tareas:
+
+Esta opción nos ofrece dos modos: Filtrar por Prioridad o Filtrar por su estado.
+Para filtrar por estado, seleccione que estado buscar y pulse el botón de filtrar de la izquierda.
+Para filtrar por prioridad, seleccione la prioridad a buscar y pulse el botón de la derecha.
+
+También incluye un botón para borrar los filtros y recuperar la lista entera. No se pueden mezclar filtros.
+
+### Borrar TODAS Las Tareas:
+
+Esto limpiará la lista entera. NO SE PODRÁ RECUPERAR.
