@@ -3,7 +3,7 @@
 import { TaskFactory } from "../patterns/factory.js"
 import { DOMFacade } from "../ui/facade.js"
 
-export let arrayTask = new Array()
+let arrayTask = new Array()
 
 export function addTask() {
     const titulo = document.getElementById("title").value
@@ -13,6 +13,8 @@ export function addTask() {
     const create = new Date()
 
     const tarea = TaskFactory.crearTarea(titulo, desc, prio, done, create)
+
+    DOMFacade.reloadList(arrayTask)
 
     arrayTask.push(tarea)
 
